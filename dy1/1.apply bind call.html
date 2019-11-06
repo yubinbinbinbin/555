@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+     /*
+        call(that,多个)
+        apply(that,两个)
+        bind(that,多个)
+
+        共同特点都是，第一个参数都是改变this指向的，函数天生自带的
+
+        null，undefined（无效的）传了都是window
+
+
+        1.this是实例
+        2.默认return 实例，如果return为引用类型就为引用类型
+        3.实例的原型链 === 构造函数的原型
+        4.可以不加括号调用
+    */
+
+    /* 
+    理解： 
+    call的形参上的 第一个 参数是 this要指向的东西 后面都是要传的参数 可以有无数个
+
+    apply的形参上 只能有两个值 一个是 this 指向 另一个是 要传的参数
+
+    bind的形参上 第一个 参数是 this要指向的东西 后面都是要传的参数 可以有无数个 跟call不同的是 他返回的是一个新函数
+
+    以上三种方法 都不能传 null 和 undefined 传了 this 指向的就是 window
+     */ 
+
+    /*
+    call方法
+      Function.prototype.mycall=function(text,...arg){
+         text = text || window;
+         let a = symbol();
+        text[a]=this;
+        let b = text[a](...arg);
+        delete text[a](...arg);
+        return b;
+     } */
+</script>
