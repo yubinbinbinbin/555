@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    /* 每创建一个函数，该函数就会自动带有一个 prototype 属性。
+    该属性是个指针，指向了一个对象，我们称之为 原型对象。什么是指针？
+    指针就好比学生的学号，原型对象则是那个学生。我们通过学号找到唯一的那个学生。
+    假设突然，指针设置 null, 学号重置空了，不要慌，对象还存在，学生也没消失。只是不好找了。
+
+
+ 原型对象上默认有一个属性 constructor，该属性也是一个指针，指向其相关联的构造函数。
+
+
+ 通过调用构造函数产生的实例，都有一个内部属性，指向了原型对象。
+ 所以实例能够访问原型对象上的所有属性和方法。 */
+
+    function Dog(name) {
+        this.name = name;
+        this.type = 'Dog';
+    }
+    Dog.prototype.speak = function () {
+        alert('wang');
+    }
+    var doggie = new Dog('jiwawa');
+    doggie.speak();  //wang 
+
+    /* 
+    先创建一个 实例  实例上的 原型 自带一个 constructor （构造函数）
+     指向当前类 通过speak 方法 实现
+     */
+
+
+</script>
