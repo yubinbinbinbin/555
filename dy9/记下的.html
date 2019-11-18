@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    /* onscroll    滚轮事件 （当有滚动条的时候 会触发该事件）
+
+       scrollHeight  被内容撑开的高度
+
+       document.doumentElment.clientheight 获取可视区的高度
+                             .clientwidth  宽度
+    
+       BOM:
+        window.innerHeight/window.innerWidth 如果有滚动条 不会减去滚动条的宽度
+
+        gitBoundingClientRect() 它返回的是一个对象 这个对象
+
+        window.pageXOffset
+
+        onerror 
+
+            箭头函数不能new new就报错
+
+            箭头函数里 改变this指向 结果还是 函数的上下文
+
+            onload 载入页面时 
+
+            onerror 
+
+     */
+     function Fn() {
+    this.x = 10;
+    this.y = 20;
+    this.getX = function () {
+        console.log(this.x);
+    }
+}
+Fn.prototype.y=40;
+Fn.prototype={
+    x:30,
+    getY:function(){
+        this.y+=1;
+        console.log(this.y);
+    },
+    sum:function(){
+        console.log(this.x+this.y);
+    }
+};
+let f1 = new Fn;
+let f2 = new Fn;
+console.log(f1.getX === f2.getX);
+console.log(f1.getY === f2.getY);
+console.log(f1.constructor);
+f1.getX();
+f2.getY();
+f1.sum();
+</script>
