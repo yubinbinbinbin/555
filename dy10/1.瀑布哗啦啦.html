@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li><img src="./img/head1.png" alt=""></li>
+            <li><img src="./img/head2.jpg" alt=""></li>
+            <li><img src="./img/head3.jpg" alt=""></li>
+            <li><img src="./img/head4.jpg" alt=""></li>
+            <li><img src="./img/head5.jpg" alt=""></li>
+        </ul>
+        <ul>
+            <li>
+                <div class="pic_box">
+                    <div class="img">
+                        <img style="height: 314px;" src="./img/1.jpg" alt="">
+                    </div>
+                    <p class="desc">所谓伊人，在水一方！</p>
+                    <div class="author">风姿酌约</div>
+                </div>
+            </li>
+            <li>
+                <div class="pic_box">
+                    <div class="img">
+                        <img style="height: 314px;" src="./img/1.jpg" alt="">
+                    </div>
+                    <p class="desc">所谓伊人，在水一方！</p>
+                    <div class="author">风姿酌约</div>
+                </div>
+            </li>
+            <li>
+                <div class="pic_box">
+                    <div class="img">
+                        <img style="height: 314px;" src="./img/1.jpg" alt="">
+                    </div>
+                    <p class="desc">所谓伊人，在水一方！</p>
+                    <div class="author">风姿酌约</div>
+                </div>
+            </li>
+            <li>
+                <div class="pic_box">
+                    <div class="img">
+                        <img style="height: 314px;" src="./img/1.jpg" alt="">
+                    </div>
+                    <p class="desc">所谓伊人，在水一方！</p>
+                    <div class="author">风姿酌约</div>
+                </div>
+            </li>
+            <li>
+                <div class="pic_box">
+                    <div class="img">
+                        <img style="height: 314px;" src="./img/1.jpg" alt="">
+                    </div>
+                    <p class="desc">所谓伊人，在水一方！</p>
+                    <div class="author">风姿酌约</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
+<script>
+    let { getCss, setCss, winH, offset } = utils;
+    let flag = false;
+    var oLis = document.querySelectorAll('.box>li')
+    function init() {
+        [...oLis].forEach(itme => item.innerHTML = '')}
+    init();
+    function getData() {
+        flag = true;
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', './data.json', true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && /200|304/.test
+                (xhr.status)) {
+                flag = false;
+                let data = JSON.parse(xhr.response);
+                renderHtml(data);
+                loadAll();
+            }
+        }
+        xhr.send();
+    }
+    getData();
+
+    function renderHtml() {
+        ary.forEach((item, index) => {
+            let { pic, author, desc, height } = item;
+            let str = `
+                <div class="img">
+                    <img style='height:${height}px' src="./img/default.jpg" realSrc='${pic}' alt="">
+                </div>
+                <p class="desc">${desc}</p>
+                <div class="author">${author}</div>
+                `;
+
+            let temp = getMinLi();
+            let div = document.createElement('div');
+            div.className = 'pic_box'
+            div.innerHTML = str;
+            temp.appendChild(div);
+        })
+    }
+
+    function loadMore() {
+        if (flag) return;
+        let scrT = document.documentElement.scrollTop;
+        let wH = winH();
+        let tarT = offset(temp).t + temp.clientHeight;
+
+        if (tarT < scrT + wH) {
+            getData();
+            console.log(111111)
+        }
+    }
+
+    window.onscroll = function () {
+        loadMore();
+        loadAll();
+    }
+
+    function loadImg(ele) {
+        if (ele.loaded) return;
+        let scrT = document.documentElement.scrollTop;
+        let wH = winH();
+        let tarT = offset(ele).t;
+        if (tarT < scrT + wH) {
+            let realSrc = ele.getAttribute('realSrc');
+            let temp = new Image();
+            temp.src = realSrc;
+            temp.onload = function () {
+                temp = null;
+                ele.loaded = true;
+                fadeIn(ele);
+            }
+        }
+    }
+    function loadAll() {
+        let imgs = document.querySelectorAll('.box img');
+        [...imgs].forEach(item => loadImg(item))
+    }
+
+    function fadeIn(ele) {
+        ele.style.opacity = 0;
+        let a = 0;
+        ele.ti, er = setInterval(() => {
+            a += 0.1;
+            if (a >= 1) {
+                a = 1;
+                clearInterval(ele.timer)
+            }
+        }, 20)
+    }
+</script>
