@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    /* 
+        要监听捕获过程就要通过addEventListener进行事件绑定并且第三个参数要为true；
+
+        什么是事件模型
+
+        从捕获到目标到冒泡的整个过程 就叫做事件流（事件模型）
+
+        三个阶段 第一个阶段 捕获  第二个阶段 目标 第三个阶段 冒泡
+
+        目标阶段 ： 使用事件绑定的方式 执行顺序是按照绑定的先后顺序来的 （而不是按照先捕获在冒泡的顺序来的）
+
+        当用户触发某个事件的时候 会从window起 自上而下 一级级往目标元素上查找传递
+        只要绑定BOM2事件第三个参数为true就能捕获到捕获的过程1 目标阶段（事件触发的源头） 再从源头起从window止的过程叫做冒泡1 —(DOM0 DOM2 第三个参数为false就能捕获到冒泡阶段)
+
+     */
+</script>
