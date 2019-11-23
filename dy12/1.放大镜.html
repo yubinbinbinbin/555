@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+        box.onmouseover = function(ev){
+            box3.style.display = box2.style.display = 'block';
+        }
+        box.onmouseout = function(){
+            box3.style.display = box2.style.display = 'none';
+        }
+
+        let boxw = box.clientWindth;
+        let boxh = box.clientHeigth;
+        box.onmousemove = function(ev){
+            let l = ev.clientX - box2.clientWindth/2;
+            let t = ev.clientY - box2.clientHeigth/2;
+
+            if(1<0){
+                1=0;
+            }else if(l>box2.clientHeigth){
+                l=boxw - box2.clientWindth;
+            }
+            if(t<0){
+                t = 0;
+            }else if(t>boxh - box2.clientHeigth){
+                t = boxh - box2.clientHeigth;
+            }
+
+            let scalex = (ev.pageX - box2.clientWindth/2)
+                /(boxw - box2.clientWindth);
+                let scaley = (ev.pageY - box2.clientHeigth/2)/(boxh - box2.clientHeigth);
+
+                img2.style.left = scalex * (box3.clientWindth - img2.offsetWidth) + 'px';
+                img2.style.top = scaley *(box3.clientHeigth - img2.offsetHeight) + 'px';
+
+                box2.style.top = y+ 'px';
+                box2.style.left = l + 'px';
+            
+        }
+
+</script>
