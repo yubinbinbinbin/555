@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button">
+    <input type="button">
+    <input type="button">
+    <input type="button">
+</body>
+
+</html>
+<script>
+    $('input[type="button"]')
+        .eq(0).click(function () {
+            alert('点击我!');
+        }).end().eq(1)
+        .click(function () {
+            $('input[type="button"]:eq(0)').trigger('click');
+        }).end().eq(2)
+        .toggle(function () {
+            $('.aa').hide('slow');
+        }, function () {
+            $('.aa').show('slow');
+        });
+/*
+        ☑  找出type类型为button的input元素
+    
+      ☑  找到第一个按钮，并绑定click事件处理函数
+    
+      ☑  返回所有按钮，再找到第二个
+    
+      ☑  为第二个按钮绑定click事件处理函数
+    
+      ☑  为第三个按钮绑定toggle事件处理函数
+    
+          那么可见jQuery的Internal DSL形式带来的好处——编写代码时，让代码更贴近作者的思维模式；阅读代码时，让读者更容易理解代码的含义；应用DSL可以有效的提高系统的可维护性（缩小了实现模型和领域模型的距离，提高了实现的可读性）和灵活性，并且提供开发的效率。
+    
+    jQuery的这种管道风格的DSL链式代码，总的来说：
+    
+      ☑  节约JS代码；
+    
+      ☑  所返回的都是同一个对象，可以提高代码的效率。
+    
+    通过简单扩展原型方法并通过return this的形式来实现跨浏览器的链式调用。利用JS下的简单工厂方法模式，来将所有对于同一个DOM对象的操作指定同一个实例。
+     */
+</script>
