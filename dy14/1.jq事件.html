@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    /* 
+        事件三大部分
+        1. 事件流
+        2. 有哪些事件 他们是干什么的
+        3. 事件对象
+
+        hover：
+        onmouseenter
+        onouseleave
+
+        JQ中的所有事件 都是on来二次封装的 jq中的时间全部都是时间绑定
+
+        jq的事件对象都是二次封装的 如果要拿到真正的原生js事件对象 ev.originalEvent(原生事件对象)
+
+        jq中阻止冒泡和默认行为 直接return false 即可
+     */
+
+
+     /* 
+        $('#box').hover(function(){
+            console.log('移入')
+        },function(){
+            console.log('移出')
+        })
+
+        事件监听：
+        $('#box').delegate('li','click',function(){
+            console.log($(this).text());
+        });
+
+
+        问题：
+        触发一次hover就绑定一次click 触发的越多 绑定的事件就越多 当触发一次click就会执行多次click事件
+
+        解决：
+        绑一次解绑一次 保持始终一次click
+
+        $('button').on('click',function(){
+            console.log(222);
+        })
+        $('button').mousedown(function(){return false;})
+
+      */
+</script>

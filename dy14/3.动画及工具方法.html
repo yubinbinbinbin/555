@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    /* 
+        hide
+        show 也是有动画的
+
+        在做jq动画的时候 记得使用stop（） 把前面的动画清掉
+
+     */
+
+     $('#btn').click(function(){
+        //  $('#box').hide(500);
+        //  $("#box").toggle(500); //改变宽高透明度
+        $("#box").stop().slideToggle(200); //改变高度
+
+        // $('#box').fadeToggle(200) //渐隐渐显
+    
+     })
+
+     let obj = {
+         name: '小明'
+     }
+
+     let obj2 = $.exteend({},obj);
+
+     console.log(obj == obj);
+
+     let ary = [1,2,[3,4]];
+
+     let ary2 = $.exetq(true,[],ary); //true就代表深度克隆
+
+     ary2[2].push(5);
+     console.log(ary2)
+</script>
