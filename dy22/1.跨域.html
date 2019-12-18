@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    /* 
+        跨域（源）
+        同源策略：一种关于安全方面的约定 他是浏览器最核心最基本的安全功能
+
+        如果缺少了同源策略 则浏览器的正常方面可能都会受到影响
+
+        Web是构建在同源策略基础之上的 浏览器只是针对同源策略的一种实现
+
+        源：
+            协议：
+            http/https(比http更加安全， 因为在传输的时候需要进行安全证书的认证)
+            ftp
+            file
+            ...
+
+            域名:(IP的另一个名字)
+            www.baidu.com
+
+            端口：
+            好比服务员 门牌号专门是做某总事件的
+            888,5500
+
+            同源：同域名 同协议 通端口
+
+            跨源：不用域名不同协议 不同端口 只要有一个不同就叫跨域
+
+            https://www.baidu.com:80 我
+            http://www.baidu.com:80 我
+            https://www.baidu.com:81 我
+            https://www.taobao.com:80 我
+
+            你要用别人的东西 （别人借给你用） （变成自己的） （自己做一个和别人一样的东西）
+
+            跨域的解决方案：
+            1、CORS
+            80端口下访问8080端口下的/kuayu接口
+
+            需要高版本浏览的XMLHttpRequest+后端设置白名单
+
+            优点：
+            前端什么都不用做 只需要后台添加白名单即可
+
+            缺点：
+            低版本不兼容
+
+            2.服务器代理
+
+            服务器能够进行跨域请求第三方资源
+            服务器跨域的代码又Hewitt端同源
+
+            优点：前端基本不用做什么 需要自己噢诶之第三方资源路径
+
+            缺点：别人变了你也得变
+
+            3.jsonp
+                json + padding 把数据内填充
+                fn({1,2,3})
+                fn(1,2,3)
+
+                functin fn(a){
+                    alert(a)
+                }
+                function fn2(a){
+                    consoe.log(a)
+                }
+     */
+</script>
