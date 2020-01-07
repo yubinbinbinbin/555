@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    /* 
+         $route
+        获取路由的信息（属性）
+
+        this.$route.oarmas
+
+        $router
+        跳转路由的方法（方法）
+
+        动态路由：
+        主体一样，但是部分内容不一样 可以使用（这个id是自定义的）
+        /about/:id  匹配下面几种路由（这个id'是自定义的）
+        /avout/1
+        /avout/2
+
+        使用
+        ￥=$route.params.id
+        切换的时候不会触发一些钩子函数 比如created
+        可以使用watch'监听
+
+        watch:{
+            $route(){
+
+            }
+        }
+
+        嵌套路由：
+        在路由配置中使用children:[{path:'x'}]  匹配的是 /parent/x
+        注意的是parent组件中需要协商touyer-vire 要不然子组件渲染不出来
+        入股进入parent下没有指定的 children又要默认添加一个组件 可以在path上写个''
+
+
+        编程导航
+        $router.push()
+        $rputer,replace()
+        $router.go()
+
+        可以穿字符串和对象
+        '/'
+        {
+            path:'/'
+            name:home;'home',
+            query:{
+                name:'百晓'   、？name=白晓
+            }
+            params：{
+                nn:白晓   注意的是路由上不会显示nn 但是可以通过$route.params.nn去获取
+            }
+        }
+
+        重定向：
+        {path: 'a', redirect:{name:'foo'}}
+
+        路由传参：
+        可以在路由配置项中配置一个props，如果为true name子组件可以通过
+        props去接受parmas参数
+        可以看home.vue中的p4
+     */
+
+
+     /* 
+        {
+            //path:'/avout/:id',
+            path:'/avout.:uname.id/:id', // /avout/nizp/id/1
+
+            //延迟加载
+            compinent:()=>import('../views/Avout.vue')
+        }
+        {
+            paht '/login', //about.nizp/id/1
+            //延迟加载
+            component：()=>import('../views.login.vue')
+        }
+        {
+            path:'//puvlic',
+            component:()=>imoirt('../views/puvllic.vue'),
+            children:[
+                {
+                    path:'pl,'  // public/pl 不要加 不然就不匹配
+                    component:()+>iport('../views/pl.vue')
+                }
+                {
+                    path:'p2',
+                    component:()=>imoort('..//viwes/pl.vue')
+                }
+                //如果进入/public下没有指定的children默认添加一个组件 可以在path上写这个
+                {
+                    path:'',
+                    component:()=> import('../views/p3.vue')
+                }
+            ]
+        }
+        {
+            path:'/p4',
+            name:'p4',
+            props:true,
+            componnent:()=> import('../views/p4.vue')
+        }
+      */
+</script>
